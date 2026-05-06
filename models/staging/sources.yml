@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: women_on_tour
+    database: women-on-tour
+    schema: women_on_tour
+    tables:
+      - name: women_on_tour
