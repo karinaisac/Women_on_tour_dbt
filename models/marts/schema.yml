@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: mart_gross_by_artist
+    columns:
+      - name: artist
+        tests:
+          - unique
+          - not_null
+      - name: total_tours
+        tests:
+          - not_null
+      - name: total_actual_gross
+        tests: 
+          - not_null
+        
+  - name: mart_yearly_trends
+    columns:
+      - name: year_start
+        tests:
+          - unique
+          - not_null
+      - name: total_actual_gross
+        tests:
+          - not_null
+      - name: total_tours
+        tests:
+          - not_null
