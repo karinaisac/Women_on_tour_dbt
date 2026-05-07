@@ -1,9 +1,15 @@
 # Women_on_tour_dbt
-My project consists of finding a real messy dataset, exporting it as a csv into BigQuery, and connecting it to dbt. In dbt, the data was cleaned and transformed into two views that were then connected to Looker via BigQuery and a dashboard was created to analyze the data.
+My project consists of finding a real messy dataset on Kaggle, exporting it as a csv, uploading it to BigQuery, and connecting the project in BigQuery to dbt. In dbt, the data was cleaned and transformed into two views. In my case, the data underwent the staging step and then went straight to marts, as I felt that I could skip the intermediate step, since I had only one table and did not need to do any joins. The marts were then connected to Looker via BigQuery and a dashboard was created in Looker to analyze the data.
 
-The data looks at several women artists, the number of shows and tours that they have done, and the actual, adjusted, and average gross revenue for those shows and tours over time. 
+The data looks at several women artists, the number of shows and tours that they have done, and the actual, adjusted, and average gross revenue for those shows and tours over time. The data was scraped from Wikipedia and therefore includes some inconsistencies, such as footnotes, dollar signs and commas in the monetary data, and various symbols in tour titles. I included a data sample below for reference on what the uncleaned data looked like before the ELT process.
 
-In my dashboard, I chose to focus on four charts to show several insights from the data:
+## Data Sample
+
+| Rank | Peak | All Time Peak | Actual Gross | Adjusted Gross (2022 $) | Artist | Tour Title | Year(s) | Shows | Average Gross | Ref. |
+|------|------|---------------|--------------|--------------------------|--------|------------|---------|-------|---------------|------|
+| 1 | 1 | 2 | $780,000,000 | $780,000,000 | Taylor Swift | The Eras Tour † | 2023–2024 | 56 | $13,928,571 | [1] |
+
+## In my dashboard, I chose to focus on four charts to show several insights from the data:
 1. Adjusted gross revenue by artist: this chart shows the adjusted gross revenue in 2022 US dollars) by artist. This chart has a direct correlation with the second chart, as Taylor Swift and Madonna had most tours and accordingly had the highest adjusted gross revenue.
 
 
@@ -30,5 +36,5 @@ There are some low points that we can also see in the line graph that directly c
 <img width="728" height="513" alt="avg gross per show" src="https://github.com/user-attachments/assets/66016b0a-8ab8-47e2-aa28-b4efb67bc25e" />
 
 
-View the full dashboard here: https://datastudio.google.com/reporting/0e7a55c6-80e9-4082-81e3-a77263e47f7d
+## View the full dashboard here: https://datastudio.google.com/reporting/0e7a55c6-80e9-4082-81e3-a77263e47f7d
 
